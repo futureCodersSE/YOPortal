@@ -1,5 +1,5 @@
-ID,NAME,SURNAME,EMAIL,STARTDATE
-1,Harry,Potter,harry.potter@gmail.com,01/12/2020
-2,Ron,Weasley,ron.weasley@gmail.com,03/12/3030
-3,Hermione,Granger,hermione.granger@gmail.com,05/12/2020
-4,Ginny,Weasley,ginny.weasley@gmail.com,09/12/2020
+ID,USERID,SUPPORTERID,EMOTION,STARTDATE
+1,3,1,5,01/12/2020
+2,4,1,4,03/12/3030
+3,5,2,2,05/12/2020
+4,6,1,1,09/12/2020

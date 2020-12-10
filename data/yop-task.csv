@@ -1,0 +1,17 @@
+ID,YOID,GOALID,TASKNAME,DESCRIPTION,TARGETDATE,ACHIEVED,VERIFIED
+1,1,1,Write CV,Complete a CV to be used for a job application. Be thorough in your CV.,12/12/2020,Y,N
+2,1,1,College,Get a place on a course leading to a certificate in bricklaying.  Send in application.  Attend interview,07/01/2021,N,N
+3,1,1,College,Get a place on a course leading to a certificate in bricklaying.  Send in application.  Attend interview,20/01/2021,N,N
+4,1,1,Write CV,Complete a CV to be used for a job application. Be thorough in your CV.,27/02/2021,N,N
+5,2,2,Complete course,"Complete all modules and assessment. Recieve a certificate, working towards the prize. ",19/01/2021,Y,Y
+6,2,2,Write CV,Complete a CV to be used for a job application. Be thorough in your CV.,15/12/2020,N,N
+7,2,2,Attend job centre,Meeting with employment officer. Ensure attends 100% of these. ,06/01/2021,Y,N
+8,2,2,College,Get a place on a course leading to a certificate in bricklaying.  Send in application.  Attend interview,13/02/2021,N,N
+9,3,3,Write CV,Complete a CV to be used for a job application. Be thorough in your CV.,09/01/2021,N,N
+10,3,3,Write CV,Complete a CV to be used for a job application. Be thorough in your CV.,9/12/2020,N,N
+11,3,3,Attend job centre,Meeting with employment officer. Ensure attends 100% of these. ,05/01/2021,N,N
+12,3,3,College,Get a place on a course leading to a certificate in bricklaying.  Send in application.  Attend interview,08/02/2021,N,N
+13,4,4,Complete course,"Complete all modules and assessment. Recieve a certificate, working towards the prize. ",11/12/2020,Y,Y
+14,4,4,Write CV,Complete a CV to be used for a job application. Be thorough in your CV.,13/01/2021,N,N
+15,4,4,Attend job centre,Meeting with employment officer. Ensure attends 100% of these. ,29/01/2021,N,N
+16,4,4,Complete course,"Complete all modules and assessment. Recieve a certificate, working towards the prize. ",07/01/2021,Y,Y
