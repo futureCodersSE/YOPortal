@@ -1,7 +1,7 @@
 ID,NAME,SURNAME,EMAIL,PASSWORD,LOGGEDIN
 1,Boris,Merkel,bm@support.gov.uk,123,N
 2,Angela,Johnson,aj@support.gov.uk,123,N
-3,Harry,Potter,harry.potter@gmail.com,123,N
+3,Harry,Potter,harry.potter@gmail.com,123,Y
 4,Ron,Weasley,ron.weasley@gmail.com,123,N
 5,Hermione,Granger,hermione.granger@gmail.com,123,N
 6,Ginny,Weasley,ginny.weasley@gmail.com,123,N

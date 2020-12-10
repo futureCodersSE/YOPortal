@@ -18,3 +18,24 @@ from yolist import list_yos
 # list_yos(supporterid, supportername)
 
 # ADD CHALLENGE CODE HERE
+
+def get_YO_user_info(userid):
+#get user with an ID of userid
+  name = ""
+  surname = ""
+  email = ""
+  logged_in = False
+
+  user_list = get_data("user")
+  for user in user_list:
+    if user["ID"] == str(userid):
+      name = user["NAME"]
+      surname = user["SURNAME"]
+      email = user["EMAIL"]
+      if user["LOGGEDIN"] == "Y":
+        logged_in = True
+      
+  return name, surname, email, logged_in
+
+name, surname, email, logged_in = get_YO_user_info(3)
+print(name, surname, email, logged_in)
