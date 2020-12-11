@@ -13,31 +13,22 @@ from yolist import list_yos
 # print(get_data("supporter"))
 
 # supporterid, supportername = login_supporter()
-supportername = "Boris"
-supporterid = 1
-list_yos(supporterid, supportername)
+# supportername = "Boris"
+# supporterid = 1
+# list_yos(supporterid, supportername)
 
 # ADD CHALLENGE CODE HERE
+def get_YO_details(yoid):
+  yos_list = get_data("yos")
+  for yos in yos_list: 
+    if yos["ID"] == str(yoid):
+      name, surname, email, logged_in = get_YO_user_info(yos["USERID"])
+      message_count, some_urgent = get_unread_message_info(yos["ID"], yos["SUPPORTERID"])
+      YO_details = {'ID': yos["ID"], 'USERID': yos["USERID"], 'SUPPORTERID': yos["SUPPORTERID"], 'EMOTION': yos["EMOTION"], 'STARTDATE': yos["STARTDATE"],'NAME': name, 'SURNAME': surname, 'EMAIL': email, 'LOGGEDIN': logged_in, 'MESSAGECOUNT': message_count, 'SOMEURGENT': some_urgent}
+      return YO_details
 
-def get_YO_user_info(userid):
-#get user with an ID of userid
-  name = ""
-  surname = ""
-  email = ""
-  logged_in = False
+print(get_YO_details(4))
 
-  user_list = get_data("user")
-  for user in user_list:
-    if user["ID"] == str(userid):
-      name = user["NAME"]
-      surname = user["SURNAME"]
-      email = user["EMAIL"]
-      if user["LOGGEDIN"] == "Y":
-        logged_in = True
-      
-  return name, surname, email, logged_in
 
-# name, surname, email, logged_in = get_YO_user_info(3)
-# print(name, surname, email, logged_in)
 
 
