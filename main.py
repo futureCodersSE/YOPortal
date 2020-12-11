@@ -18,3 +18,17 @@ from yolist import list_yos
 # list_yos(supporterid, supportername)
 
 # ADD CHALLENGE CODE HERE
+def get_YO_details(yoid):
+  yos_list = get_data("yos")
+  for yos in yos_list: 
+    if yos["ID"] == str(yoid):
+      name, surname, email, logged_in = get_YO_user_info(yos["USERID"])
+      message_count, some_urgent = get_unread_message_info(yos["ID"], yos["SUPPORTERID"])
+      YO_details = {'ID': yos["ID"], 'USERID': yos["USERID"], 'SUPPORTERID': yos["SUPPORTERID"], 'EMOTION': yos["EMOTION"], 'STARTDATE': yos["STARTDATE"],'NAME': name, 'SURNAME': surname, 'EMAIL': email, 'LOGGEDIN': logged_in, 'MESSAGECOUNT': message_count, 'SOMEURGENT': some_urgent}
+      return YO_details
+
+print(get_YO_details(4))
+
+
+
+

@@ -5,5 +5,5 @@ ID,SUPPORTERID,YOID,TASKID,MESSAGEDATE,SUBJECT,MESSAGETEXT, READ,URGENT
 4,1,4,14,10/12/2020,started task,just going to start task 14 now,unread,not urgent
 5,1,2,7,12/12/2020,i need help,what you need help with ,read,not urgent
 6,1,4,13,13/12/2020,im struggling,its a bit hard and im struggling,read,urgent
-7,1,4,13,15/12/2020,i got an interview,i got an interview today and i felt like it went well,read,urgent
+7,1,4,13,15/12/2020,i got an interview,i got an interview today and i felt like it went well,unread,urgent
 8,1,4,14,16/12/2020,i done it,i complete what i needed to complete,read,urgent
