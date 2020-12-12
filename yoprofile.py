@@ -36,7 +36,7 @@ def show_yo_profile(yoid):
     [sg.Button('Close', size=(15,2))]
   ]
 
-  window = sg.Window(yo_header, size=(800,350)).Layout(layout)
+  window = sg.Window(yo_header, size=(800,400)).Layout(layout)
 
   # wait for a button to be clicked and handle it
   while True:
