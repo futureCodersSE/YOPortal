@@ -10,13 +10,11 @@ def show_yo_profile(yoid):
   urgent = "red" if yo_details["SOMEURGENT"] else "white"
   messages_text = "Messages: " + str(yo_details["MESSAGECOUNT"])
   online_colour = "green" if yo_details["LOGGEDIN"] else "gray"
-  online_text = "online" if yo_details["LOGGEDIN"] else "offline"
   emotion_colour = "green" if yo_details["EMOTION"] == "5" else "lightgreen" if yo_details["EMOTION"] == "4" else "yellow" if yo_details["EMOTION"] == "3" else "orange" if yo_details == "2" else "red"
 
   layout = [
     [
       sg.Image(get_emotion_image(yo_details["EMOTION"]), size=(40,40), background_color=emotion_colour),
-      #sg.Button(button_color=("gray","gray"), image_filename=get_emotion_image(yo_details["EMOTION"]),image_size=(60,60)),
       sg.Text("",size=(20,1)), sg.Text(yo_details["NAME"], font=('Helvetica', 12, 'bold')),sg.Text(yo_details["SURNAME"],size=(30,1), font=('Helvetica', 12, 'bold')), 
       sg.Button("Online", button_color=("black",online_colour), size=(20,3))
     ],
@@ -42,7 +40,7 @@ def show_yo_profile(yoid):
     event,values = window.read()
     print(event)
     if event == 'Tasks':
-      display_tasks(yo_details["ID"])
+      display_tasks(yo_details)
     if event == 'Close':
       break
   window.close()
