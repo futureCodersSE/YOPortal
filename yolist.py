@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 from datahandlers import get_data
-from helpers import get_YO_user_info, get_emotion_image
-
+from helpers import get_YO_details, get_emotion_image, get_unread_message_info
+from yoprofile import show_yo_profile
 
 
 def list_yos(supporterid, supportername):
@@ -23,22 +23,30 @@ def list_yos(supporterid, supportername):
   for yo in yos:
     for user in users:
       if user['ID'] == yo['USERID']:
-        name, surname, email, logged_in = get_YO_user_info(user['ID'])
-        start_date = yo['STARTDATE']
-        emotion_status = yo['EMOTION']
+        yo_details = get_YO_details(yo["ID"])
+        # name, surname, email, logged_in = get_YO_user_info(user['ID'])
+        # start_date = yo['STARTDATE']
+        # emotion_status = yo['EMOTION']
+        # message_count
+        message_colour = "red" if yo_details["SOMEURGENT"] else "black"
         layout.append([
-          sg.Text(name, size=(16,1)),
-          sg.Text(surname, size=(16,1)),
-          sg.Text(start_date, size=(18,1)),
-          sg.Button(button_color=("gray","gray"), image_filename=get_emotion_image(emotion_status),image_size=(20,20)),
-          sg.Text("", size=(24,1)), 
-          sg.Button('Select')])
-  layout.append([sg.Button('Close')])
-  window = sg.Window('YOs', size=(800,400)).Layout(layout)
+          sg.Text(yo_details["NAME"], size=(16,2)),
+          sg.Text(yo_details["SURNAME"], size=(16,2)),
+          sg.Text(yo_details["STARTDATE"], size=(18,2)),
+          sg.Button(button_color=("gray","gray"), image_filename=get_emotion_image(yo_details["EMOTION"]),image_size=(20,20), size=(20,2)),
+          sg.Text(yo_details["MESSAGECOUNT"], justification="center", text_color=message_colour, font=('Helvetica', 12, 'bold'), size=(18,2)), 
+          sg.Button('Select', key='yo-' + yo["ID"])])
+        break
+  layout.append([sg.Button('Close', size=(20,2))])
+  window = sg.Window('YOs', size=(800,350)).Layout(layout)
 
   # wait for a button to be clicked and handle it
   while True:
     event,values = window.read()
+
+    if event.find('yo-') != -1:
+      yoid = event.split('-')[1]
+      show_yo_profile(yoid)
     if event == 'Close':
       break
   window.close()
