@@ -60,22 +60,13 @@ def get_YO_details(yoid):
       YO_details = {'ID': yos["ID"], 'USERID': yos["USERID"], 'SUPPORTERID': yos["SUPPORTERID"], 'EMOTION': yos["EMOTION"], 'STARTDATE': yos["STARTDATE"],'NAME': name, 'SURNAME': surname, 'EMAIL': email, 'LOGGEDIN': logged_in, 'MESSAGECOUNT': message_count, 'SOMEURGENT': some_urgent}
       return YO_details
 
-def sort_emotion_image(emotion):
+import operator 
+
+def sort_emotion_image():
   yos_list = get_data("yos")
-  user_list = get_data("user")
-  for user in user_list:
-    for emotion in yos_list:
-      if emotion == 1:
-        return user 
-      elif emotion == 2:
-        return user 
-      elif emotion == 3:
-        return user
-      else:
-        return user 
+  for yos in yos_list:
+    sorted_emotions = sorted(yos_list, key=operator.itemgetter('EMOTION'))
+  return sorted_emotions
   
-
-
-
-
+# print(sort_emotion_image())
       

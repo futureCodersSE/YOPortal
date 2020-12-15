@@ -1,7 +1,8 @@
 import PySimpleGUI as sg
 from datahandlers import get_data
-from helpers import get_YO_details, get_emotion_image, get_unread_message_info
+from helpers import get_YO_details, get_emotion_image, get_unread_message_info, sort_emotion_image
 from yoprofile import show_yo_profile
+
 
 
 def list_yos(supporterid, supportername):
@@ -18,7 +19,8 @@ def list_yos(supporterid, supportername):
       sg.Text('Messages', size=(14,1),font=('Helvetica',10,'bold'))
     ]
   ]
-  yos = get_data("yos")
+  # yos = get_data("yos")
+  yos = sort_emotion_image()
   users = get_data("user")
   for yo in yos:
     for user in users:
