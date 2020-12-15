@@ -37,6 +37,7 @@ def get_emotion_image(emotion):
     return "Unknown emotion" ##
 
 
+
 # get number of messages and if any are urgent
 def get_unread_message_info(yoid, supporterid):
   message_list = get_data("message")
@@ -58,3 +59,23 @@ def get_YO_details(yoid):
       message_count, some_urgent = get_unread_message_info(yos["ID"], yos["SUPPORTERID"])
       YO_details = {'ID': yos["ID"], 'USERID': yos["USERID"], 'SUPPORTERID': yos["SUPPORTERID"], 'EMOTION': yos["EMOTION"], 'STARTDATE': yos["STARTDATE"],'NAME': name, 'SURNAME': surname, 'EMAIL': email, 'LOGGEDIN': logged_in, 'MESSAGECOUNT': message_count, 'SOMEURGENT': some_urgent}
       return YO_details
+
+def sort_emotion_image(emotion):
+  yos_list = get_data("yos")
+  user_list = get_data("user")
+  for user in user_list:
+    for emotion in yos_list:
+      if emotion == 1:
+        return user 
+      elif emotion == 2:
+        return user 
+      elif emotion == 3:
+        return user
+      else:
+        return user 
+  
+
+
+
+
+      
