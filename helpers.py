@@ -62,11 +62,11 @@ def get_YO_details(yoid):
 
 import operator 
 
+## Lila Challenge 1
 def sort_emotion_image():
   yos_list = get_data("yos")
-  for yos in yos_list:
-    sorted_emotions = sorted(yos_list, key=operator.itemgetter('EMOTION'))
-  return sorted_emotions
+  yos_list.sort(key=operator.itemgetter('EMOTION'))
+  return yos_list
   
 # print(sort_emotion_image())
       
