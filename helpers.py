@@ -58,3 +58,5 @@ def get_YO_details(yoid):
       message_count, some_urgent = get_unread_message_info(yos["ID"], yos["SUPPORTERID"])
       YO_details = {'ID': yos["ID"], 'USERID': yos["USERID"], 'SUPPORTERID': yos["SUPPORTERID"], 'EMOTION': yos["EMOTION"], 'STARTDATE': yos["STARTDATE"],'NAME': name, 'SURNAME': surname, 'EMAIL': email, 'LOGGEDIN': logged_in, 'MESSAGECOUNT': message_count, 'SOMEURGENT': some_urgent}
       return YO_details
+
+

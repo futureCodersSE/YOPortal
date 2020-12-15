@@ -2,7 +2,7 @@
 from datahandlers import get_data
 from login import login_supporter
 from yolist import list_yos
-
+from operator import itemgetter
 # main program
 # print(get_data("yos"))
 # print(get_data("message"))
@@ -19,6 +19,9 @@ list_yos(supporterid, supportername)
 
 # ADD CHALLENGE CODE HERE
 
+def sort_data_emotion():
+  yos = get_data("yos")
+  yos.sort(key=itemgetter("EMOTION"))
+  return yos
 
-
-
+print(sort_data_emotion())
