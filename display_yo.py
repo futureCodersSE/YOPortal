@@ -12,6 +12,10 @@ def send_notification(supporterid, yoid):
   # list notifications from this supporter to given yo
   pass
 
+def get_notification(supporterid, yoid):
+  # list notifications from this supporter to given yo
+  pass
+
 def logout_supporter():
   pass
 

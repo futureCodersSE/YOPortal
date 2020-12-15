@@ -2,6 +2,7 @@
 from datahandlers import get_data
 from login import login_supporter
 from yolist import list_yos
+from display_yo import receive_messages
 
 # main program
 # print(get_data("yos"))
@@ -12,12 +13,29 @@ from yolist import list_yos
 # print(get_data("notification"))
 # print(get_data("supporter"))
 
-# supporterid, supportername = login_supporter()
-supportername = "Boris"
-supporterid = 1
-list_yos(supporterid, supportername)
+# # supporterid, supportername = login_supporter()
+# supportername = "Boris"
+# supporterid = 1
+# list_yos(supporterid, supportername)
 
 # ADD CHALLENGE CODE HERE
+#Get list of notifications for yo & supporter
+def display_notifications(supporterid, yoid):
+  notification_list = get_data('notification')
+  notification_list2 = []  
+  for n in notification_list:     
+    if n['SUPPORTERID'] == supporterid and n['YOID'] == yoid:
+      notification_list2.append(n)
+    print(notification_list2)
+  return notification_list2
+
+print(display_notifications('1','2'))
+
+
+
+
+
+
 
 
 
