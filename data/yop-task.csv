@@ -15,3 +15,5 @@ ID,YOID,GOALID,TASKNAME,DESCRIPTION,TARGETDATE,ACHIEVED,VERIFIED
 14,4,4,Write CV,Complete a CV to be used for a job application. Be thorough in your CV.,13/01/2021,N,N
 15,4,4,Attend job centre,Meeting with employment officer. Ensure attends 100% of these. ,29/01/2021,N,N
 16,4,4,Complete course,"Complete all modules and assessment. Recieve a certificate, working towards the prize. ",07/01/2021,Y,Y
+17,1,1,Complete course,BMD Full course,19/01/2021,N,N
+18,1,1,Complete course,BMD Full course,19/01/2021,N,N

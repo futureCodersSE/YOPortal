@@ -1,8 +1,9 @@
 # Portal app to work with goals database
-from datahandlers import get_data
+from datahandlers import get_data, update_data
 from login import login_supporter
 from yolist import list_yos
 from display_yo import receive_messages
+from yotasks import display_tasks
 
 # main program
 # print(get_data("yos"))
@@ -19,24 +20,28 @@ from display_yo import receive_messages
 # list_yos(supporterid, supportername)
 
 # ADD CHALLENGE CODE HERE
-#Get list of notifications for yo & supporter
-def display_notifications(supporterid, yoid):
-  notification_list = get_data('notification')
-  notification_list2 = []  
-  for n in notification_list:     
-    if n['SUPPORTERID'] == supporterid and n['YOID'] == yoid:
-      notification_list2.append(n)
-    print(notification_list2)
-  return notification_list2
-
-print(display_notifications('1','2'))
-
-
-
-
-
-
-
-
-
-
+def add_task(yoid, goalid, taskname, description, targetdate):  
+  #get the next available id
+  task_list = get_data('task')
+  last_task_in_list = task_list[-1]
+  next_id_for_task = int(last_task_in_list['ID']) + 1
+  
+  #new dict for task and add data
+  new_task = {
+    'ID':str(next_id_for_task),
+    'YOID': yoid,
+    'GOALID':goalid,
+    'TASKNAME':taskname,
+    'DESCRIPTION':description,
+    'TARGETDATE':targetdate,
+    'ACHIEVED':'N',
+    'VERIFIED':'N',
+  }
+  
+  #add task to end of task_list & data
+  task_list.append(new_task)
+  
+  #overwrite yop-task.csv
+  task_list = update_data('task',task_list) 
+  
+add_task('1','1', 'Complete course', 'BMD Full course','19/01/2021')
