@@ -1,11 +1,11 @@
 import PySimpleGUI as sg
 from datahandlers import get_data
-from helpers import get_YO_details, get_emotion_image, get_unread_message_info
+from helpers import get_YO_details, get_emotion_image
 from yoprofile import show_yo_profile
 
 
 def list_yos(supporterid, supportername):
-  # get list of all yos with this supporter id
+  # display title and headings
   layout = [
     [
       sg.Text('YOs for supporter: ', font=('Helvetica', 12, 'bold')),
@@ -18,16 +18,13 @@ def list_yos(supporterid, supportername):
       sg.Text('Messages', size=(14,1),font=('Helvetica',10,'bold'))
     ]
   ]
+  # get and display list of all yos with this supporter id
   yos = get_data("yos")
   users = get_data("user")
   for yo in yos:
     for user in users:
       if user['ID'] == yo['USERID']:
         yo_details = get_YO_details(yo["ID"])
-        # name, surname, email, logged_in = get_YO_user_info(user['ID'])
-        # start_date = yo['STARTDATE']
-        # emotion_status = yo['EMOTION']
-        # message_count
         message_colour = "red" if yo_details["SOMEURGENT"] else "black"
         layout.append([
           sg.Text(yo_details["NAME"], size=(16,2)),

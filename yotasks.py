@@ -5,6 +5,7 @@ from datahandlers import get_data
 def display_tasks(yo_details):
   # get list of all tasks for this yo
   task_list = get_data('task')
+  # sort task list
   layout = [
     [sg.Text('List of tasks for '), sg.Text(yo_details["NAME"]), sg.Text(yo_details["SURNAME"])],
     [sg.Text('ID',size=(3,2)),sg.Text('TASK NAME',size = (15,2)), sg.Text('DESCRIPTION',size = (38,2)),sg.Text('TARGETDATE',size=(13,2)), sg.Text('ACHIEVED', size=(10,2)), sg.Text('VERIFIED', size=(10,2))],

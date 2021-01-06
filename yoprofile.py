@@ -26,7 +26,7 @@ def show_yo_profile(yoid):
     ],
     [
       sg.Text("", size=(20,3)),
-      sg.Button("Goals", button_color=("black", "orange"), font=('Helvetica', 12, 'bold'), size=(20,3)),
+      sg.Button("Goal", button_color=("black", "orange"), font=('Helvetica', 12, 'bold'), size=(20,3)),
       sg.Button(" Audit Logs  ",button_color=("black", "yellow"), font=('Helvetica', 12, 'bold'), size=(20,3))
     ],
     [sg.Text("", size=(20,1))],
