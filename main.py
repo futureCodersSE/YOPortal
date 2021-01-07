@@ -56,5 +56,6 @@ def display_notifications(yoid):
     if event == 'Close':
       break
   window.close()
+
 #main program
-# display_notifications(3)
+display_notifications(3)
