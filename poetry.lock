@@ -1,10 +1,10 @@
 [[package]]
 category = "main"
-description = "GUI SDK Launched in 2018. It's 2020 and PySimpleGUI is actively developed and supported. Super-simple to create custom GUI's. 200+ Demo programs & Cookbook for rapid start. Extensive documentation. Main doc is www.PySimpleGUI.org.  Examples using Machine Learning (GUI, OpenCV Integration,  Chatterbot), Rainmeter Style Floating Desktop Widgets, Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. Great for beginners as well as advanced GUI programmers"
+description = "GUI SDK Launched in 2018. It's 2021 and PySimpleGUI is actively developed and supported. Super-simple to create custom GUI's. 300 Demo programs & Cookbook for rapid start. Extensive documentation. Main docs at www.PySimpleGUI.org.  Examples using Machine Learning (GUI, OpenCV Integration,  Chatterbot), Rainmeter Style Desktop Widgets, Matplotlib + Pyplot integration, add GUI to command line scripts, PDF & Image Viewer. Great for beginners as well as advanced GUI programmers"
 name = "pysimplegui"
 optional = false
 python-versions = "*"
-version = "4.32.1"
+version = "4.33.0"
 
 [metadata]
 content-hash = "274a4b819461bcdf60a9c0f48983b222739c97366e82addb54db984964209aea"
@@ -12,6 +12,6 @@ python-versions = "^3.8"
 
 [metadata.files]
 pysimplegui = [
-    {file = "PySimpleGUI-4.32.1-py3-none-any.whl", hash = "sha256:641431980a020159e4b1b4a425202560abf616b4de523d9b7476ff228b69b694"},
-    {file = "PySimpleGUI-4.32.1.tar.gz", hash = "sha256:7132066ac7e365718e3025daa578cd3b229507164c6d80829405c9293adc6935"},
+    {file = "PySimpleGUI-4.33.0-py3-none-any.whl", hash = "sha256:a4889564bd55d01bd7c9fe7faa18d3512318003351ebd83ace8da0d83594c847"},
+    {file = "PySimpleGUI-4.33.0.tar.gz", hash = "sha256:54476526654dfc57057fc7d8cb202308e19ca0161d88d94c0313a1845130b8ee"},
 ]
