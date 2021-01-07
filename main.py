@@ -3,6 +3,7 @@ from datahandlers import get_data
 from login import login_supporter
 from yolist import list_yos
 
+
 # main program
 # print(get_data("yos"))
 # print(get_data("message"))
@@ -13,9 +14,9 @@ from yolist import list_yos
 # print(get_data("supporter"))
 
 # supporterid, supportername = login_supporter()
-# supportername = "Boris"
-# supporterid = 1
-# list_yos(supporterid, supportername)
+supportername = "Boris"
+supporterid = 1
+list_yos(supporterid, supportername)
 
 # ADD CHALLENGE CODE HERE
 # Get notifications data
@@ -38,7 +39,10 @@ def get_notification_data(yoid):
 
 def display_notifications(yoid):
   layout = [
-    [sg.Text("NOTIFICATIONS", size=(40,1), font=("Helvetica",18,"bold"))]
+    [
+      sg.Text("NOTIFICATIONS", size=(22,1), font=("Helvetica",18,"bold")),
+      sg.Button('Log-out', size=(20,2))
+    ]
   ]
   notification_list = get_notification_data(yoid)
   for notification in notification_list:
@@ -53,4 +57,4 @@ def display_notifications(yoid):
       break
   window.close()
 #main program
-display_notifications(3)
+# display_notifications(3)
