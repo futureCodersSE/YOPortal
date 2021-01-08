@@ -16,7 +16,7 @@ def show_yo_profile(yoid):
 
   layout = [
     [
-      sg.Image(get_emotion_image(yo_details["EMOTION"]), size=(40,40), background_color=emotion_colour),
+      sg.Image(get_emotion_image(yo_details["EMOTION"]), size=(50,50), background_color=emotion_colour),
       sg.Text("",size=(20,1)), sg.Text(yo_details["NAME"], font=('Helvetica', 12, 'bold')),sg.Text(yo_details["SURNAME"],size=(30,1), font=('Helvetica', 12, 'bold')), 
       sg.Button("Online", button_color=("black",online_colour), size=(20,3))
     ],

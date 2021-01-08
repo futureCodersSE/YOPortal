@@ -30,7 +30,7 @@ def list_yos(supporterid, supportername):
           sg.Text(yo_details["NAME"], size=(16,2)),
           sg.Text(yo_details["SURNAME"], size=(16,2)),
           sg.Text(yo_details["STARTDATE"], size=(18,2)),
-          sg.Button(button_color=("gray","gray"), image_filename=get_emotion_image(yo_details["EMOTION"]),image_size=(20,20), size=(20,2)),
+          sg.Button(button_color=("gray","gray"), image_filename=get_emotion_image(yo_details["EMOTION"]),image_size=(50,50), size=(20,2)),
           sg.Text(yo_details["MESSAGECOUNT"], justification="center", text_color=message_colour, font=('Helvetica', 12, 'bold'), size=(18,2)), 
           sg.Button('Select', key='yo-' + yo["ID"])])
         break
