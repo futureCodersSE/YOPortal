@@ -31,6 +31,10 @@ def create_messages_window(yoid):
   for message in message_list:
      if message['YOID']== str(yoid):
        layout.append([sg.Text('_'*140)])
+
+       layout.append([sg.Text(' ', size=(70,1))+ sg.Text('Urgent', size=(70,1))])
+       layout.append([sg.Text(' ', size=(70,1))])
+       layout.append([sg.Text('Opened', size=(70,1))])
        layout.append([sg.Text('Date', font=('bold')), sg.Text(message['MESSAGEDATE'])])
        layout.append([sg.Text('Subject', font=('bold')), sg.Text(message['SUBJECT'])])
        layout.append([sg.Text('Text'), sg.Text(message['MESSAGETEXT'])])
