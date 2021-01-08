@@ -1,5 +1,5 @@
 # Portal app to work with goals database
-from datahandlers import get_data
+from datahandlers import get_data,update_data
 from login import login_supporter
 from yolist import list_yos
 import PySimpleGUI as sg
@@ -142,7 +142,16 @@ def edit_goal(yoid):
   window = sg.Window('EDIT Goals',size= (600,350)).Layout(layout)
   while True:
     event,values = window.read()
-    if event == 'Close':
+    if event == 'Save':
+      for g in goal_list:
+        if g["YOID"] == str(yoid):
+          g["GOALNAME"] = values[goal["GOALNAME"]]
+          g["DESCRIPTION"] = values[goal["DESCRIPTION"]]
+          g["TARGETDATE"] = values[goal["TARGETDATE"]]
+        break
+      goal_list = update_data("goal",goal_list)
+  
+    if event == 'Cancel':
       break
   window.close()
 
