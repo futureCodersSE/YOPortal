@@ -40,9 +40,9 @@ def get_notification_data(yoid):
 def display_notifications(yoid):
   layout = [
     [
-      sg.Text("NOTIFICATIONS", size=(22,1), font=("Helvetica",18,"bold")),
+      sg.Text("NOTIFICATIONS", size=(15,1), font=("Helvetica",18,"bold")),
       sg.Button("add notification",size=(20,2)),
-      sg.Button('Log-out', size=(20,2))
+      sg.Button('Logout', size=(20,2))
     ]
   ]
   notification_list = get_notification_data(yoid)
@@ -54,6 +54,8 @@ def display_notifications(yoid):
   window = sg.Window('Notifications', size=(600,350)).Layout(layout)
   while True:
     event,values = window.read()
+    if event == "add notification":
+      add_new_notification(yoid)
     if event == 'Close':
       break
   window.close()
