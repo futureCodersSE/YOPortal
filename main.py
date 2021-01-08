@@ -27,67 +27,80 @@ import PySimpleGUI as sg
 # 4,4,Apprenticeship,Start an apprenticeship,16/2/2020,N
 
 
-def show_goals(yoid):
-  goal_list = get_data("goal")
-  for goal in goal_list: 
-    if goal["YOID"] == str(yoid):
-      YOgoal = goal
-      break
+# def show_goals(yoid):
+#   goal_list = get_data("goal")
+#   for goal in goal_list: 
+#     if goal["YOID"] == str(yoid):
+#       YOgoal = goal
+#       break
 
-  layout = [
-
-    [sg.Text("GOAL DETAILS", size=(28,1), font = ("Helvetica", 18, "bold")), sg.Button("LOG OUT")],
-    [sg.Text("_"*92)],
-    [sg.Text("GOAL NAME", size=(20,2), font = ("Helvetica", 14)), sg.Text(YOgoal["GOALNAME"], size=(25,2), font = ("Helvetica", 14, "bold"))],
-    [sg.Text("DESCRIPTION", size=(20,4), font = ("Helvetica", 14)), sg.Text(YOgoal["DESCRIPTION"], size=(25,4), font = ("Helvetica", 14, "bold"))],
-    [sg.Text("TARGET DATE", size=(20,2), font = ("Helvetica", 14)), sg.Text(YOgoal["TARGETDATE"], size=(25,2), font = ("Helvetica", 14, "bold"))],
-    [sg.Text("ACHIEVED", size=(20,2), font = ("Helvetica", 14)), sg.Text(YOgoal["ACHIEVED"], size=(25,2), font = ("Helvetica", 14, "bold"))],
-
-    [sg.Button("EDIT"), sg.Button("CLOSE")],
-    
-  ]
-
-  window = sg.Window("Young Offenders Goals", size=(600,400)).Layout(layout)
-  while True: 
-    event, values = window.read()
-
-  window.Close()
-
-show_goals(3)
-
-
-
-
-
-
-
-
-# def edit_task(task):
-#   #task_list = get_data("task")
 #   layout = [
-#     [sg.Text("EDIT / ADD TASK", size=(28,2), font = ("Helvetica", 18, "bold")), sg.Button("LOG OUT")],
-#     [sg.Text("Task Name", size=(25,2)), sg.Input(task["TASKNAME"])],
-#     [sg.Text("Description", size=(25,2)), sg.Multiline(task["DESCRIPTION"], size=(None,6))],
-#     [sg.Text("Target date", size=(25,2)), sg.Input(task["TARGETDATE"])],
-#     [sg.Text("Achieved", size=(25,2)), sg.Checkbox("", size=(100,10), disabled = True, default = task["ACHIEVED"] == "Y")],
-#     [sg.Text("Verified", size=(25,2)), sg.Checkbox("", size=(100,10), default = task["VERIFIED"] == "Y")],
+
+#     [sg.Text("GOAL DETAILS", size=(28,1), font = ("Helvetica", 18, "bold")), sg.Button("LOG OUT")],
+#     [sg.Text("_"*92)],
+#     [sg.Text("GOAL NAME", size=(20,2), font = ("Helvetica", 14)), sg.Text(YOgoal["GOALNAME"], size=(25,2), font = ("Helvetica", 14, "bold"))],
+#     [sg.Text("DESCRIPTION", size=(20,4), font = ("Helvetica", 14)), sg.Text(YOgoal["DESCRIPTION"], size=(25,4), font = ("Helvetica", 14, "bold"))],
+#     [sg.Text("TARGET DATE", size=(20,2), font = ("Helvetica", 14)), sg.Text(YOgoal["TARGETDATE"], size=(25,2), font = ("Helvetica", 14, "bold"))],
+#     [sg.Text("ACHIEVED", size=(20,2), font = ("Helvetica", 14)), sg.Text(YOgoal["ACHIEVED"], size=(25,2), font = ("Helvetica", 14, "bold"))],
+
+#     [sg.Button("EDIT"), sg.Button("CLOSE")],
     
-
-
-#     [sg.Button("SAVE"), sg.Button("CANCEL")],
-
-
 #   ]
 
-#   window = sg.Window("EDIT TASK", size=(600,400)).Layout(layout)
+#   window = sg.Window("Young Offenders Goals", size=(600,400)).Layout(layout)
 #   while True: 
 #     event, values = window.read()
 
 #   window.Close()
 
+# show_goals(3)
 
-# task = {"ID":"1", "YOID":"1", "GOALID": "1", "TASKNAME": "Write CV", "DESCRIPTION":"Complete a CV to be used for a job application. Be thorough in your CV", "TARGETDATE":"12/12/2020", "ACHIEVED":"Y", "VERIFIED":"N"}
+def calculate_goal_achieved(goalid): 
+  # get all goal data 
+  # get goal with this ID (GOAL)
+  # get all task data
+  # for all tasks with this GOALID - check if all achieved/verified
+  # if all tasks achieved/verified, set goal["ACHIEVED"] to yes 
 
-# edit_task(task)
+  goal_list = get_data("goal")
+  for YOgoal in goal_list: 
+    if YOgoal["ID"] == str(goalid):
+      goal = YOgoal
+      break
+  print(goal)
+
+
+
+
+
+
+def edit_task(task):
+  # task_list = get_data("task")
+  layout = [
+    [sg.Text("EDIT / ADD TASK", size=(28,2), font = ("Helvetica", 18, "bold")), sg.Button("LOG OUT")],
+    [sg.Text("Task Name", size=(25,2)), sg.Input(task["TASKNAME"])],
+    [sg.Text("Description", size=(25,2)), sg.Multiline(task["DESCRIPTION"], size=(None,6))],
+    [sg.Text("Target date", size=(25,2)), sg.Input(task["TARGETDATE"])],
+    [sg.Text("Achieved", size=(25,2)), sg.Checkbox("", size=(100,10), disabled = True, default = task["ACHIEVED"] == "Y")],
+    [sg.Text("Verified", size=(25,2)), sg.Checkbox("", size=(100,10), default = task["VERIFIED"] == "Y")],
+    
+
+
+    [sg.Button("SAVE"), sg.Button("CANCEL")],
+
+
+  ]
+
+  window = sg.Window("EDIT TASK", size=(600,400)).Layout(layout)
+  while True: 
+    event, values = window.read()
+    if event == "SAVE": 
+      calculate_goal_achieved(task["GOALID"])
+  window.Close()
+
+
+task = {"ID":"1", "YOID":"1", "GOALID": "1", "TASKNAME": "Write CV", "DESCRIPTION":"Complete a CV to be used for a job application. Be thorough in your CV", "TARGETDATE":"12/12/2020", "ACHIEVED":"Y", "VERIFIED":"N"}
+
+edit_task(task)
 
 
