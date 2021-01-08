@@ -41,6 +41,8 @@ def edit_task(taskid):
     event, values = window.read()
     if event == "SAVE": 
       calculate_goal_achieved(task["GOALID"])
+    if event == "CANCEL": 
+      break 
   window.Close()
 
 # Dee
