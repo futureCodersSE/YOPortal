@@ -44,6 +44,8 @@ def show_yo_profile(yoid):
       display_tasks(yo_details)
     elif event == 'Notifications':
       display_notifications(yoid)
+    elif event == 'Goal':
+      display_goal(yoid)
     if event == 'Close':
       break
   window.close()
