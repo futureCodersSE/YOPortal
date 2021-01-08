@@ -1,5 +1,5 @@
 # Portal app to work with goals database
-from datahandlers import get_data
+from datahandlers import get_data, update_data
 from login import login_supporter
 from yolist import list_yos
 import PySimpleGUI as sg
@@ -69,6 +69,17 @@ def calculate_goal_achieved(goalid):
       break
   print(goal)
 
+  all_achieved_verified = True 
+  task_list = get_data("task")
+  for task in task_list:
+    if task["GOALID"] == str(goalid):
+      if task["ACHIEVED"] == "N" or task["VERIFIED"] == "N":
+        all_achieved_verified = False 
+  if all_achieved_verified: 
+    for goal in goal_list:
+      if goal["ID"] == str(goalid):
+        goal["ACHIEVED"] = "Y"
+        print(update_data("goal", goal_list))
 
 
 
