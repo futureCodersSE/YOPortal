@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 from helpers import get_emotion_image, get_YO_details
 from yotasks import display_tasks
+from yonotifications import display_notifications
 
 
 def show_yo_profile(yoid):
@@ -41,6 +42,8 @@ def show_yo_profile(yoid):
     print(event)
     if event == 'Tasks':
       display_tasks(yo_details)
+    elif event == 'Notifications':
+      display_notifications(yoid)
     if event == 'Close':
       break
   window.close()
