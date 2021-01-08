@@ -1,3 +1,6 @@
+import PySimpleGUI as sg
+from datahandlers import get_data
+
 def display_goal(yoid):
   goal_list = get_data("goal")
   for goal in goal_list: 

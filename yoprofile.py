@@ -2,6 +2,7 @@ import PySimpleGUI as sg
 from helpers import get_emotion_image, get_YO_details
 from yotasks import display_tasks
 from yonotifications import display_notifications
+from yogoals import display_goal
 
 
 def show_yo_profile(yoid):
