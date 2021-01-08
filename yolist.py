@@ -8,8 +8,10 @@ def list_yos(supporterid, supportername):
   # display title and headings
   layout = [
     [
-      sg.Text('YOs for supporter: ', font=('Helvetica', 12, 'bold')),
-      sg.Text(supportername,font=('Helvetica', 12, 'bold'))],
+      sg.Text('YOS FOR SUPPORTER: ', font=('Helvetica', 12, 'bold')),
+      sg.Text(supportername, size=(40,1), font=('Helvetica', 12, 'bold')) , sg.Button("LOG OUT")],
+     [sg.Text("_"*120)],
+
     [
       sg.Text('Name',size=(14,1),font=('Helvetica', 10, 'bold')),
       sg.Text('Surname',size=(14,1),font=('Helvetica', 10, 'bold')),
